@@ -1,6 +1,6 @@
 ## 中文
 ### 项目简介
-此项目提供了一个脚本，用于在 WSL2 中自动配置代理设置，解决在添加` .wslconfig` 文件（例如设置` networkingMode=mirrored`）后，WSL2 无法连接 Visual Studio Code (VSCode) 的问题。通过动态同步 Windows 主机的代理设置，此脚本确保 WSL2 无需手动干预即可保持网络连接。
+此项目提供了一个脚本，用于在 WSL2 中自动配置代理设置，解决在添加`.wslconfig` 文件（例如设置`networkingMode=mirrored`）后，WSL2 无法连接 Visual Studio Code (VSCode) 的问题。通过动态同步 Windows 主机的代理设置，此脚本确保 WSL2 无需手动干预即可保持网络连接。
 
 ### 功能
 - 自动从 Windows 注册表获取主机 IP 和代理设置。  
@@ -15,18 +15,21 @@
    Windows 已配置代理（例如 127.0.0.1:7890）。
 
 ### 安装步骤:
-1. 克隆此仓库:  
-   `git clone https://github.com/LEE784/wsl2-auto-proxy.git`  
-   `cd wsl2-auto-proxy`  
-2. 将脚本复制到家目录:  
-   `cp auto_proxy.sh ~/auto_proxy.sh`  
-   `chmod +x ~/auto_proxy.sh`  
-3. 添加到 `.bashrc`:  
-   `echo '. ~/auto_proxy.sh' >> ~/.bashrc`  
-   `source ~/.bashrc`  
+1. 克隆此仓库:
+   ```bash
+   git clone https://github.com/LEE784/wsl2-auto-proxy.git  
+   cd wsl2-auto-proxy  
+3. 将脚本复制到家目录:
+   ```bash
+   cp auto_proxy.sh ~/auto_proxy.sh  
+   chmod +x ~/auto_proxy.sh  
+5. 添加到 `.bashrc`:
+   ```bash
+   echo '. ~/auto_proxy.sh' >> ~/.bashrc  
+   source ~/.bashrc  
 ### 使用方法  
    打开 WSL2 终端，代理设置将自动应用。
-### 验证:  
+### 验证:
 `echo $http_proxy`  
 ### 注意事项  
 - 确保 Windows 代理对 WSL2 可访问（例如绑定到 0.0.0.0）。  
@@ -60,9 +63,11 @@ When configuring `.wslconfig` (e.g., `networkingMode=mirrored`), WSL2 may lose c
    git clone https://github.com/LEE784/wsl2-auto-proxy.git
    cd wsl2-auto-proxy
 2. Copy the script to your home directory:
+   ```bash
    cp auto_proxy.sh ~/auto_proxy.sh
    chmod +x ~/auto_proxy.sh
 3. Add it to .bashrc:
+   ```bash
    echo '. ~/auto_proxy.sh' >> ~/.bashrc
    source ~/.bashrc
 ### Usage
